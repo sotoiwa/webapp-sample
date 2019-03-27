@@ -5,9 +5,9 @@ script:
 - cd sample
 - mvn clean verify
 - cd ../
-- cp target/sample.war .
-- cp target/liberty/wlp/usr/server/defaultSever/server.xml .
-- cp target/liberty/wlp/usr/resources/mysql-*.jar .
+- cp sample/target/sample.war .
+- cp sample/target/liberty/wlp/usr/server/defaultSever/server.xml .
+- cp sample/target/liberty/wlp/usr/resources/mysql-*.jar .
 - docker build -t $DOCKER_USERNAME/sample:1.0 .
 
 after_success:
