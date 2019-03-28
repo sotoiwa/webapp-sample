@@ -79,6 +79,7 @@
             <type>zip</type>
           </assemblyArtifact>
           <configFile>src/main/liberty/config/server.xml</configFile>
+          <serverEnv>src/main/liberty/config/server.env</serverEnv>
           <include>${packaging.type}</include>
         </configuration>
       </plugin>
