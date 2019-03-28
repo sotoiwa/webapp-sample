@@ -1,5 +1,6 @@
 language: java
 dist: xenial
+
 script:
 - cd sample
 - mvn clean verify
@@ -8,11 +9,13 @@ script:
 - cp sample/target/liberty/wlp/usr/servers/defaultServer/server.xml .
 - cp sample/target/liberty/wlp/usr/shared/resources/mysql-*.jar .
 - docker build -t $DOCKER_USERNAME/sample:1.0 .
+
 after_success:
 - if [ "$TRAVIS_PULL_REQUEST" = "false" ] && [ "$TRAVIS_BRANCH" = "master" ]; then
     echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin;
     docker push $DOCKER_USERNAME/sample:1.0;
   fi
+
 notifications:
   slack:
-    secure: kxWX+SxaEKY0QJ2KRK5rL7lVXB9rIk+Y9zu2HhvcoJ0kNJLiGdQ9YDAGqX7vlXx50XYzGMlsga6pFhaJuHfx30lLCTuHobn4tqkRJ2qlqr1a61FbqLP/XcwO9t1eug8AG30HI98/stnIc9JMyqNOc/0MujxqvRLUbgN7jP2Slu0KIDfsPnOvrTiA2r/Fsv18aT9681YDDSLbkzBQn8RYItaK+5BiSasbiklAlCujPLS8On6FP0GPPnM9dqu33wzzaBXg6a6dsdA8pk0qVyqKjPySAOjdPqTQ++9E11koE1CGg/oJAonanrsrCSlnJ96uMjd1iV8SzoGbHP/yqphRhKtfCvdyCZaMHIS3XdDqWE1IuYhGYHAeZ32ZV4ICeXawNktRAvvF1mJ74H5CimyCY7mHVZWqmcQNvuhNWvQ4JSOuq7hfKBua3YWny+TOWZCcGXa2brbyEk/yIao/1Uuv29iZa3PY2V6FLPHml4RZu4to1R36XvLk69UvoLiGY98CVJpY8I9L4jyp3zh2pywNL5mkoV0l3qlYNmM6I07pJAAuI5CJe3aZlpZxb8Yhz4xN3s9KgBkhUiyHVsyhlU5sqV4dHhdhavDGYcYIrUG9vVz1DCZheVqMldWHaxAj7xeGeOZMivg/55ynWP+r7q5w0TMbWpEzfgzVc4vkfQQiCfw=
+    secure: Kbo3VgmwcqRozfwEHQfpi8SYqAb7aEbJIQP4N5uepUzXkeWCjbSIIoYRIPZavSNlKsV/TCnAqEKaWsFlQ4UqAvLKjN6gCscdYM5t/pTQWD/kniUP8z7WhB9FWBA49lQG+iezMkBG/1DvtApNY9TNDhSe2Uel2W4+m2Xvg0JvmJG1i9dw6JpUBav+Cj+CKxuQchgKNEABG0o3NjAm2+sxCA2gtBpmg+kRTBTxXYVsBpHupWIqG4gb3Cb+fEJ/qkQMkTDs1kN9K9AnEMBzf6+erzYvMqmcMvNvPIn2IeZn0qgjP47mtPAmpjQDs8wUvUelQ8fBJqKrdPP/OQI6NUygTBcHv8cEHCKS2PWRPp746aCu+CGiEdqGz1A+4T4hfn8+BI3ox5/1ebSgvDAs5g2kkrw3t2hiuNLLF19GyUJxlVlXXrdMccAANSpD3FFqkasDprVx+xSHzIpS6X4yHuwW6nyN0+RSgSc6yMe9GVU2wt5ASxLGjnWBbePhAzObhzxAUe1Gu09kQ33mlM7hELrxVpTvtiBgwhx4F1jLRWIDXWn0dsUGznAk90ydcOeclrhVCEXrXfmOFBjffypwSrBwRLC8JtqOQwkovcHoA7CLgNMgY/KnteYAjOo8RYtUjIzxVTN/fUP4V2qBUWQ9UwWGaiNy025xi6FNlYLqH9I/3qQ=
