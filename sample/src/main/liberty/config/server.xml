@@ -26,6 +26,7 @@
 
   <mpMetrics authentication="false" />
 
+  <!--
   <library id="MySQLLib">
     <fileset dir="${server.config.dir}/resources"
       includes="mysql-*.jar" />
@@ -37,6 +38,7 @@
       portNumber="${env.MYSQL_PORTNUMBER}" user="${env.MYSQL_USER}"
       password="${env.MYSQL_PASSWORD}" />
   </dataSource>
+  -->
 
   <!-- Automatically expand WAR files and EAR files -->
   <applicationManager autoExpand="true" />
