@@ -51,7 +51,6 @@ public class JDBCServlet extends HttpServlet {
     DataSource dataSource = null;
     Connection conn = null;
 
-    // String dataSourceName = System.getenv("DATASOURCE_NAME");
     String dataSourceName = "jdbc/mydb";
 
     try {
