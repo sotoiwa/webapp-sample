@@ -7,9 +7,8 @@
     <join>
       <multicast enabled="false"/>
       <kubernetes enabled="true">
-        <namespace>liberty-guide</namespace>
-        <service-name>sample-ibm-websphere-lib</service-name>
-        <service-port>5701</service-port>
+        <service-dns>sample-ibm-websphere-lib-sts</service-dns>
+        <service-dns-timeout>5</service-dns-timeout>
       </kubernetes>
     </join>
   </network>

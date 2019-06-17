@@ -8,6 +8,7 @@
       <multicast enabled="false"/>
       <kubernetes enabled="true">
         <service-dns>sample-ibm-websphere-lib-sts.liberty-guide.svc.cluster.local</service-dns>
+        <service-dns-timeout>5</service-dns-timeout>
       </kubernetes>
     </join>
   </network>
