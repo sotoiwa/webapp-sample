@@ -1,0 +1,10 @@
+<hazelcast>        
+  <network>
+    <join>
+      <multicast enabled="false"/>
+      <kubernetes enabled="true">
+        <service-dns>sample-ibm-websphere-lib-sts</service-dns>
+      </kubernetes>
+    </join>
+  </network>
+</hazelcast>
