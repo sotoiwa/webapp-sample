@@ -8,6 +8,7 @@ script:
 - cd ../build/
 - cp ../sample/Dockerfile .
 - cp ../sample/target/sample.war .
+- cd ../sample/hazel*.xml .
 - cp ../sample/target/liberty/wlp/usr/servers/defaultServer/server.xml .
 - cp ../sample/target/liberty/wlp/usr/shared/resources/mysql-*.jar .
 - docker build -t $DOCKER_USERNAME/sample:1.0 .
