@@ -14,8 +14,8 @@
         <discovery-strategy enabled="true" class="com.hazelcast.kubernetes.HazelcastKubernetesDiscoveryStrategy">
           <properties>
             <property name="service-name">sample-ibm-websphere-lib</property>
-            <property name="namespace">liberty-guide</property>
             <property name="service-port">5701</property>
+            <property name="namespace">liberty-guide</property>
           </properties>
         </discovery-strategy>
       </discovery-strategies>
