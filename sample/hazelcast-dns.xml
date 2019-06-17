@@ -13,7 +13,7 @@
       <discovery-strategies>
         <discovery-strategy enabled="true" class="com.hazelcast.kubernetes.HazelcastKubernetesDiscoveryStrategy">
           <properties>
-            <property name="service-dns">sample-ibm-websphere-lib-sts</property>
+            <property name="service-dns">sample-ibm-websphere-lib-sts.liberty-guide.svc.cluster.local</property>
             <property name="service-dns-timeout">5</property>
           </properties>
         </discovery-strategy>
