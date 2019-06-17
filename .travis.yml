@@ -4,7 +4,7 @@ dist: xenial
 script:
 - mkdir -p build
 - cd sample
-- mvn clean pachage
+- mvn clean package
 - cd ../build/
 - cp ../sample/Dockerfile .
 - cp ../sample/target/sample.war .
