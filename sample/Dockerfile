@@ -6,10 +6,12 @@ RUN apt-get update \
 USER 1001
 
 COPY --chown=1001:0 server.xml /config/
-RUN installUtility install --acceptLicense defaultServer
+
 COPY --chown=1001:0 mysql-*.jar /config/resources/mysql/
 COPY --chown=1001:0 sample.war /config/apps/
 
 COPY --from=hazelcast/hazelcast --chown=1001:0 /opt/hazelcast/lib/*.jar /opt/ibm/wlp/usr/shared/resources/hazelcast/
 COPY --chown=1001:0 hazelcast-sessioncache.xml /config/configDropins/overrides/
 COPY --chown=1001:0 hazelcast.xml /opt/ibm/wlp/usr/shared/config/hazelcast/
+
+RUN installUtility install --acceptLicense defaultServer
