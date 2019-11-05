@@ -1,4 +1,4 @@
-FROM websphere-liberty:19.0.0.6-webProfile8
+FROM websphere-liberty:19.0.0.9-webProfile8
 USER 0
 RUN apt-get update \
     && DEBIAN_FRONTEND=noninteractive apt-get install -y vim-tiny \
